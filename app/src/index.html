@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SRAL LIMS</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/app.css?v=%%CSSVER%%">
+<script>window.LIMS_CONFIG = %%CONFIG_JSON%%;</script>
+</head>
+<body>
+
+<div id="login-screen" class="login-wrap hidden">
+  <div class="login-card">
+    <div class="login-brand">
+      <span class="login-mark" aria-hidden="true">S</span>
+      <div>
+        <div class="login-title">SRAL LIMS</div>
+        <div class="login-sub">Laboratory sign in</div>
+      </div>
+    </div>
+    <div id="login-msg"></div>
+    <form id="login-form">
+      <label class="field"><span class="lbl">Email</span><input type="email" name="email" autocomplete="username" required></label>
+      <label class="field"><span class="lbl">Password</span><input type="password" name="password" autocomplete="current-password" required></label>
+      <button class="btn btn-block" type="submit">Sign in</button>
+    </form>
+    <p class="muted" style="margin-top:16px;font-size:12px">Internal system for Sadguru Research &amp; Analysis Laboratory staff only. Accounts are created in the Supabase dashboard — see the README for the first sign-in.</p>
+  </div>
+</div>
+
+<div id="app-shell" class="shell hidden">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <div>
+        <div class="brand-text">SRAL LIMS</div>
+        <div class="brand-sub">Internal use only</div>
+      </div>
+    </div>
+    <nav id="nav"></nav>
+    <div class="me">
+      <div class="name" id="me-name">—</div>
+      <div class="role" id="me-role">—</div>
+      <button type="button" id="signout-btn">Sign out</button>
+    </div>
+  </aside>
+  <div class="main">
+    <div class="topbar">
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Menu">☰</button>
+      <h1 id="page-title">Dashboard</h1>
+      <div></div>
+    </div>
+    <div class="content" id="content"></div>
+  </div>
+</div>
+
+<div id="pending-screen" class="login-wrap hidden">
+  <div class="login-card">
+    <h2>Account awaiting approval</h2>
+    <p class="muted">Your sign-in worked, but an admin needs to set your role before you can use the LIMS. Ask a lab admin to open <strong>Users</strong> and activate your account.</p>
+    <button class="btn btn-ghost" id="pending-signout">Sign out</button>
+  </div>
+</div>
+
+<script src="/assets/api.js?v=%%APIVER%%"></script>
+<script src="/assets/pdf.js?v=%%PDFVER%%"></script>
+<script src="/assets/app.js?v=%%APPVER%%" defer></script>
+</body>
+</html>
